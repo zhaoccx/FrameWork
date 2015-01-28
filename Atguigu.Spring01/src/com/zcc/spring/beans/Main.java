@@ -5,11 +5,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		HelloWorld helloWorld = new HelloWorld();
-		helloWorld.setName("words");
-
-		helloWorld.hello();
+		// HelloWorld helloWorld = new HelloWorld();
+		// helloWorld.setName("words");
+		//
+		// helloWorld.hello();
 
 		ApplicationContext cxtApplicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 		HelloWorld bean = (HelloWorld) cxtApplicationContext.getBean("hellos");
