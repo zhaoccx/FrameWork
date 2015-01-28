@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-	<bean id="hellos" class="com.zcc.spring.beans.HelloWorld">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="hell" class="com.zcc.spring.beans.HelloWorld">
 		<property name="name" value="Springs"></property>
 	</bean>
-
+	<bean id="car" class="com.zcc.spring.beans.Car">
+		<constructor-arg value="oneString" index="1"></constructor-arg>
+		<constructor-arg value="666" index="2" type="int"></constructor-arg>
+		<constructor-arg value="30000" index="0" type="String"></constructor-arg>
+	</bean>
+	<bean id="car2" class="com.zcc.spring.beans.Car">
+		<constructor-arg value="oneString" index="0"></constructor-arg>
+		<constructor-arg value="666" index="1" type="String"></constructor-arg>
+		<constructor-arg value="30000" index="2" type="double"></constructor-arg>
+	</bean>
+	<bean id="person" class="com.zcc.spring.beans.Person">
+		<property name="name" value="李折"></property>
+		<property name="age">
+			<value>45</value>
+		</property>
+		<property name="car">
+			<ref bean="car"/>
+		</property>
+	</bean>
 </beans>
