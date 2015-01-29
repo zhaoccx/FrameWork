@@ -1,29 +1,32 @@
 package com.zcc.spring.beans;
 
-public class HelloWorld {
-	private String name;
+import java.util.Calendar;
 
-	public String getName() {
+public class HelloWorld {
+	private String userName;
+
+	public String getUserName() {
 		System.out.println("getName");
-		return name;
+		return userName;
 	}
 
-	public void setName(String name) {
+	public void setUserName(String name) {
 		System.out.println("setName" + name);
-		this.name = name;
+		this.userName = name;
 	}
 
 	public void hello() {
-		System.out.println("hello : " + name);
+		System.out.println("hello : " + userName);
 	}
 
 	public HelloWorld(String name) {
 		super();
-		this.name = name;
+		this.userName = name;
 	}
 
 	public HelloWorld() {
 		System.out.println("构造方法生成了。");
+		Calendar.getInstance();
 	}
 
 }
