@@ -1,12 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>测试Spring开始页面</title>
 </head>
 <body>
+
+	<form action="springmvc/testModelAttribute" method="post">
+		private String username<input type="text" name="username"
+			value="Tonse" /><br> private String email<input type="text"
+			name="email" value="abc@163.com" /><br> private int age<input
+			type="text" name="age" value="34" /><br> <input type="submit"
+			value="Submit" />
+	</form>
+	<br>
+	<br>
+	<a href="springmvc/testSessionAttributes">Hello SessionAttributes</a>
+	<br>
+	<br>
+	<a href="springmvc/testMap">Hello testtestMap</a>
+	<br>
+	<br>
+	<a href="springmvc/testModelAndView">Hello testModelAndView</a>
+	<br>
+	<br>
+	<a href="springmvc/testServletAPIout">Hello testServletAPIout</a>
+	<br>
+	<br>
+	<a href="springmvc/testServletAPI">Hello testServletAPI</a>
+	<br>
+	<br>
 	<a href="helloworld">Hello World</a>
 	<br>
 	<br>

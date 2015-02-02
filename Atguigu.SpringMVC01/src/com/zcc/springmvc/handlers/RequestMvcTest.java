@@ -1,6 +1,13 @@
 package com.zcc.springmvc.handlers;
 
+import java.io.IOException;
+import java.io.Writer;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -9,14 +16,58 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.zcc.springmvc.entites.Person;
 
+//@SessionAttributes(value = { "time" }, types = { String.class, Person.class })
 @RequestMapping("/springmvc")
 @Controller
 public class RequestMvcTest {
 
 	private static String SUCCESS = "success";
+
+	@RequestMapping("/testModelAttribute")
+	public String testModelAttribute(Person per) {
+		System.out.println("update :" + per);
+		return SUCCESS;
+	}
+
+	@RequestMapping("testSessionAttributes")
+	public String testSessionAttributes(Map<String, Object> map) {
+		map.put("time", new Date());
+		map.put("names", Arrays.asList("Tom", "san", "snnnnnnn"));
+		map.put("user", new Person("Tomes", "123456", "tom@hotmsil.com", 45));
+		return SUCCESS;
+	}
+
+	@RequestMapping("testMap")
+	public String testMap(Map<String, Object> map) {
+		System.out.println(map.getClass().getName());
+		map.put("names", Arrays.asList("Tom", "san", "snnnnnnn"));
+		return SUCCESS;
+	}
+
+	@RequestMapping("testModelAndView")
+	public ModelAndView testModelAndView() {
+		String viewName = SUCCESS;
+		ModelAndView mv = new ModelAndView(viewName);
+		mv.addObject("time", new Date());
+		return mv;
+	}
+
+	@RequestMapping("testServletAPIout")
+	public void testServletAPIOut(HttpServletRequest request, HttpServletResponse response, Writer writer) throws IOException {
+		System.out.println("testServletAPI : " + request + ", " + response + ", " + writer);
+		writer.write("success OK");
+	}
+
+	@RequestMapping("testServletAPI")
+	public String testServletAPI(HttpServletRequest request, HttpServletResponse response, Writer writer) {
+		System.out.println("testServletAPI : " + request + ", " + response + ", " + writer);
+		return SUCCESS;
+	}
 
 	@RequestMapping("mymvc")
 	public String requestTest() {

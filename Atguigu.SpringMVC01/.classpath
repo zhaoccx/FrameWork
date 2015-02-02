@@ -24,7 +24,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-beans-4.1.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-context-4.1.0.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-context-4.1.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-context-4.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-context-4.1.0.RELEASE.jar" sourcepath="WebContent/WEB-INF/lib/spring-context-4.1.0.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-context-support-4.1.0.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-context-support-4.1.0.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-context-support-4.1.0.RELEASE.jar"/>
