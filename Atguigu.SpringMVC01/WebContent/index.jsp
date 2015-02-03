@@ -9,11 +9,11 @@
 <body>
 
 	<form action="springmvc/testModelAttribute" method="post">
-		private String username<input type="text" name="username"
-			value="Tonse" /><br> private String email<input type="text"
-			name="email" value="abc@163.com" /><br> private int age<input
-			type="text" name="age" value="34" /><br> <input type="submit"
-			value="Submit" />
+		<input type="hidden" name="id" value="1" />
+		private String username<input type="text" name="username" value="Tonse" /><br> 
+		private String email <input type="text"	name="email" value="abc@163.com" /><br> 
+		private int age<input type="text" name="age" value="34" /><br> 
+		<input type="submit" value="Submit" />
 	</form>
 	<br>
 	<br>
