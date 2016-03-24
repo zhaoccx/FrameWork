@@ -4,15 +4,12 @@ import org.hibernate.Session;
 
 import com.test.hib.HibernateSessionFactory;
 
-public class Test {
-
+public class Test{
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-
+	@SuppressWarnings("unused")
+	public static void main(String [] args){
 		Session session = HibernateSessionFactory.getSession();
-		
 	}
-
 }

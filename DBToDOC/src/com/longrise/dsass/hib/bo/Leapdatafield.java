@@ -5,65 +5,54 @@ import java.sql.Timestamp;
 /**
  * Leapdatafield entity. @author MyEclipse Persistence Tools
  */
-
-public class Leapdatafield implements java.io.Serializable {
-
+@SuppressWarnings("serial")
+public class Leapdatafield implements java.io.Serializable{
 	// Fields
-
-	private String id;
-	private String tablename;
-	private String name;
-	private String cnname;
-	private String code;
-	private Integer datatype;
-	private String defalutvalue;
-	private String measuerunit;
-	private Integer minsize;
-	private Integer maxsize;
-	private String codetype;
-	private Integer isnullable;
-	private Integer ispk;
-	private Integer generatortype;
-	private Integer isunique;
-	private Integer isunionunique;
-	private Integer generatorruntime;
-	private String remarks;
-	private Integer numericscale;
-	private Integer rn;
-	private Integer orderid;
-	private Integer cloudappid;
-	private String fieldtype;
-	private String creator;
-	private Timestamp createtime;
-	private String updater;
-	private Timestamp updatetime;
-	private Integer canfulltextsearch;
-	private String sourcefield;
-	private String sourcetable;
-	private Integer issourcepk;
+	private String		id;
+	private String		tablename;
+	private String		name;
+	private String		cnname;
+	private String		code;
+	private Integer		datatype;
+	private String		defalutvalue;
+	private String		measuerunit;
+	private Integer		minsize;
+	private Integer		maxsize;
+	private String		codetype;
+	private Integer		isnullable;
+	private Integer		ispk;
+	private Integer		generatortype;
+	private Integer		isunique;
+	private Integer		isunionunique;
+	private Integer		generatorruntime;
+	private String		remarks;
+	private Integer		numericscale;
+	private Integer		rn;
+	private Integer		orderid;
+	private Integer		cloudappid;
+	private String		fieldtype;
+	private String		creator;
+	private Timestamp	createtime;
+	private String		updater;
+	private Timestamp	updatetime;
+	private Integer		canfulltextsearch;
+	private String		sourcefield;
+	private String		sourcetable;
+	private Integer		issourcepk;
 
 	// Constructors
-
 	/** default constructor */
-	public Leapdatafield() {
+	public Leapdatafield(){
 	}
 
 	/** minimal constructor */
-	public Leapdatafield(String id) {
+	public Leapdatafield(String id){
 		this.id = id;
 	}
 
 	/** full constructor */
-	public Leapdatafield(String id, String tablename, String name,
-			String cnname, String code, Integer datatype, String defalutvalue,
-			String measuerunit, Integer minsize, Integer maxsize,
-			String codetype, Integer isnullable, Integer ispk,
-			Integer generatortype, Integer isunique, Integer isunionunique,
-			Integer generatorruntime, String remarks, Integer numericscale,
-			Integer rn, Integer orderid, Integer cloudappid, String fieldtype,
-			String creator, Timestamp createtime, String updater,
-			Timestamp updatetime, Integer canfulltextsearch,
-			String sourcefield, String sourcetable, Integer issourcepk) {
+	public Leapdatafield(String id, String tablename, String name, String cnname, String code, Integer datatype, String defalutvalue, String measuerunit, Integer minsize, Integer maxsize, String codetype, Integer isnullable, Integer ispk, Integer generatortype, Integer isunique, Integer isunionunique, Integer generatorruntime, String remarks, Integer numericscale, Integer rn, Integer orderid,
+			Integer cloudappid, String fieldtype, String creator, Timestamp createtime, String updater, Timestamp updatetime, Integer canfulltextsearch, String sourcefield, String sourcetable, Integer issourcepk){
 		this.id = id;
 		this.tablename = tablename;
 		this.name = name;
@@ -98,253 +87,251 @@ public class Leapdatafield implements java.io.Serializable {
 	}
 
 	// Property accessors
-
-	public String getId() {
+	public String getId(){
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(String id){
 		this.id = id;
 	}
 
-	public String getTablename() {
+	public String getTablename(){
 		return this.tablename;
 	}
 
-	public void setTablename(String tablename) {
+	public void setTablename(String tablename){
 		this.tablename = tablename;
 	}
 
-	public String getName() {
+	public String getName(){
 		return this.name;
 	}
 
-	public void setName(String name) {
+	public void setName(String name){
 		this.name = name;
 	}
 
-	public String getCnname() {
+	public String getCnname(){
 		return this.cnname;
 	}
 
-	public void setCnname(String cnname) {
+	public void setCnname(String cnname){
 		this.cnname = cnname;
 	}
 
-	public String getCode() {
+	public String getCode(){
 		return this.code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(String code){
 		this.code = code;
 	}
 
-	public Integer getDatatype() {
+	public Integer getDatatype(){
 		return this.datatype;
 	}
 
-	public void setDatatype(Integer datatype) {
+	public void setDatatype(Integer datatype){
 		this.datatype = datatype;
 	}
 
-	public String getDefalutvalue() {
+	public String getDefalutvalue(){
 		return this.defalutvalue;
 	}
 
-	public void setDefalutvalue(String defalutvalue) {
+	public void setDefalutvalue(String defalutvalue){
 		this.defalutvalue = defalutvalue;
 	}
 
-	public String getMeasuerunit() {
+	public String getMeasuerunit(){
 		return this.measuerunit;
 	}
 
-	public void setMeasuerunit(String measuerunit) {
+	public void setMeasuerunit(String measuerunit){
 		this.measuerunit = measuerunit;
 	}
 
-	public Integer getMinsize() {
+	public Integer getMinsize(){
 		return this.minsize;
 	}
 
-	public void setMinsize(Integer minsize) {
+	public void setMinsize(Integer minsize){
 		this.minsize = minsize;
 	}
 
-	public Integer getMaxsize() {
+	public Integer getMaxsize(){
 		return this.maxsize;
 	}
 
-	public void setMaxsize(Integer maxsize) {
+	public void setMaxsize(Integer maxsize){
 		this.maxsize = maxsize;
 	}
 
-	public String getCodetype() {
+	public String getCodetype(){
 		return this.codetype;
 	}
 
-	public void setCodetype(String codetype) {
+	public void setCodetype(String codetype){
 		this.codetype = codetype;
 	}
 
-	public Integer getIsnullable() {
+	public Integer getIsnullable(){
 		return this.isnullable;
 	}
 
-	public void setIsnullable(Integer isnullable) {
+	public void setIsnullable(Integer isnullable){
 		this.isnullable = isnullable;
 	}
 
-	public Integer getIspk() {
+	public Integer getIspk(){
 		return this.ispk;
 	}
 
-	public void setIspk(Integer ispk) {
+	public void setIspk(Integer ispk){
 		this.ispk = ispk;
 	}
 
-	public Integer getGeneratortype() {
+	public Integer getGeneratortype(){
 		return this.generatortype;
 	}
 
-	public void setGeneratortype(Integer generatortype) {
+	public void setGeneratortype(Integer generatortype){
 		this.generatortype = generatortype;
 	}
 
-	public Integer getIsunique() {
+	public Integer getIsunique(){
 		return this.isunique;
 	}
 
-	public void setIsunique(Integer isunique) {
+	public void setIsunique(Integer isunique){
 		this.isunique = isunique;
 	}
 
-	public Integer getIsunionunique() {
+	public Integer getIsunionunique(){
 		return this.isunionunique;
 	}
 
-	public void setIsunionunique(Integer isunionunique) {
+	public void setIsunionunique(Integer isunionunique){
 		this.isunionunique = isunionunique;
 	}
 
-	public Integer getGeneratorruntime() {
+	public Integer getGeneratorruntime(){
 		return this.generatorruntime;
 	}
 
-	public void setGeneratorruntime(Integer generatorruntime) {
+	public void setGeneratorruntime(Integer generatorruntime){
 		this.generatorruntime = generatorruntime;
 	}
 
-	public String getRemarks() {
+	public String getRemarks(){
 		return this.remarks;
 	}
 
-	public void setRemarks(String remarks) {
+	public void setRemarks(String remarks){
 		this.remarks = remarks;
 	}
 
-	public Integer getNumericscale() {
+	public Integer getNumericscale(){
 		return this.numericscale;
 	}
 
-	public void setNumericscale(Integer numericscale) {
+	public void setNumericscale(Integer numericscale){
 		this.numericscale = numericscale;
 	}
 
-	public Integer getRn() {
+	public Integer getRn(){
 		return this.rn;
 	}
 
-	public void setRn(Integer rn) {
+	public void setRn(Integer rn){
 		this.rn = rn;
 	}
 
-	public Integer getOrderid() {
+	public Integer getOrderid(){
 		return this.orderid;
 	}
 
-	public void setOrderid(Integer orderid) {
+	public void setOrderid(Integer orderid){
 		this.orderid = orderid;
 	}
 
-	public Integer getCloudappid() {
+	public Integer getCloudappid(){
 		return this.cloudappid;
 	}
 
-	public void setCloudappid(Integer cloudappid) {
+	public void setCloudappid(Integer cloudappid){
 		this.cloudappid = cloudappid;
 	}
 
-	public String getFieldtype() {
+	public String getFieldtype(){
 		return this.fieldtype;
 	}
 
-	public void setFieldtype(String fieldtype) {
+	public void setFieldtype(String fieldtype){
 		this.fieldtype = fieldtype;
 	}
 
-	public String getCreator() {
+	public String getCreator(){
 		return this.creator;
 	}
 
-	public void setCreator(String creator) {
+	public void setCreator(String creator){
 		this.creator = creator;
 	}
 
-	public Timestamp getCreatetime() {
+	public Timestamp getCreatetime(){
 		return this.createtime;
 	}
 
-	public void setCreatetime(Timestamp createtime) {
+	public void setCreatetime(Timestamp createtime){
 		this.createtime = createtime;
 	}
 
-	public String getUpdater() {
+	public String getUpdater(){
 		return this.updater;
 	}
 
-	public void setUpdater(String updater) {
+	public void setUpdater(String updater){
 		this.updater = updater;
 	}
 
-	public Timestamp getUpdatetime() {
+	public Timestamp getUpdatetime(){
 		return this.updatetime;
 	}
 
-	public void setUpdatetime(Timestamp updatetime) {
+	public void setUpdatetime(Timestamp updatetime){
 		this.updatetime = updatetime;
 	}
 
-	public Integer getCanfulltextsearch() {
+	public Integer getCanfulltextsearch(){
 		return this.canfulltextsearch;
 	}
 
-	public void setCanfulltextsearch(Integer canfulltextsearch) {
+	public void setCanfulltextsearch(Integer canfulltextsearch){
 		this.canfulltextsearch = canfulltextsearch;
 	}
 
-	public String getSourcefield() {
+	public String getSourcefield(){
 		return this.sourcefield;
 	}
 
-	public void setSourcefield(String sourcefield) {
+	public void setSourcefield(String sourcefield){
 		this.sourcefield = sourcefield;
 	}
 
-	public String getSourcetable() {
+	public String getSourcetable(){
 		return this.sourcetable;
 	}
 
-	public void setSourcetable(String sourcetable) {
+	public void setSourcetable(String sourcetable){
 		this.sourcetable = sourcetable;
 	}
 
-	public Integer getIssourcepk() {
+	public Integer getIssourcepk(){
 		return this.issourcepk;
 	}
 
-	public void setIssourcepk(Integer issourcepk) {
+	public void setIssourcepk(Integer issourcepk){
 		this.issourcepk = issourcepk;
 	}
-
 }
