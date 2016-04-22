@@ -59,7 +59,7 @@
 	<classpathentry kind="lib" path="E:/Softwares/hibernate/hibernate-search-4.5.3.Final/dist/lib/clustering/jgroups-3.4.3.Final.jar"/>
 	<classpathentry kind="lib" path="E:/Softwares/hibernate/hibernate-search-4.5.3.Final/dist/hibernate-search-engine-4.5.3.Final.jar"/>
 	<classpathentry kind="lib" path="E:/Softwares/hibernate/hibernate-search-4.5.3.Final/dist/hibernate-search-orm-4.5.3.Final.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0.66">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_79">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
