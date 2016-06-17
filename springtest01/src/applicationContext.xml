@@ -1,10 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
 	<bean id="hello" class="com.spring.test.Hello">
 		<property name="name" value="Spring"></property>
 	</bean>
+
+	<bean id="car" class="com.spring.test.beans.Car">
+		<constructor-arg value="aaa" index="0"></constructor-arg>
+		<constructor-arg value="bbb" index="1"></constructor-arg>
+		<constructor-arg value="450" type="int"></constructor-arg>
+	</bean>
+
+	<bean id="car2" class="com.spring.test.beans.Car">
+		<constructor-arg value="aaa" type="java.lang.String"></constructor-arg>
+		<constructor-arg value="bbb" type="java.lang.String"></constructor-arg>
+		<constructor-arg value="230.0" type="double"></constructor-arg>
+	</bean>
+
+	<bean id="car3" class="com.spring.test.beans.Car">
+		<constructor-arg value="dd" type="java.lang.String" index="0"></constructor-arg>
+		<constructor-arg type="java.lang.String" index="1">
+			<value><![CDATA[<sha^>]]></value>
+		</constructor-arg>
+		<constructor-arg type="int" index="2">
+			<value>34</value>
+		</constructor-arg>
+		<constructor-arg value="2300" type="double" index="3"></constructor-arg>
+	</bean>
+
+	<bean id="person" class="com.spring.test.beans.Person">
+		<property name="name" value="李白"></property>
+		<property name="age" value="89"></property>
+		<property name="car" ref="car3"></property>
+	</bean>
+
+	<bean id="person2" class="com.spring.test.beans.Person">
+		<property name="name" value="李白"></property>
+		<property name="age" value="89"></property>
+		<property name="car">
+			<bean class="com.spring.test.beans.Car">
+				<constructor-arg value="6666" type="java.lang.String" index="0"></constructor-arg>
+				<constructor-arg type="java.lang.String" index="1">
+					<value><![CDATA[<sha^>]]></value>
+				</constructor-arg>
+				<constructor-arg type="int" index="2">
+					<value>34</value>
+				</constructor-arg>
+				<constructor-arg value="2300" type="double" index="3"></constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	<bean id="person3" class="com.spring.test.beans.Person">
+		<property name="name" value="李白"></property>
+		<property name="age" value="89"></property>
+		<property name="car">
+			<bean class="com.spring.test.beans.Car">
+				<constructor-arg value="6666" type="java.lang.String" index="0"></constructor-arg>
+				<constructor-arg type="java.lang.String" index="1">
+					<value><![CDATA[<sha^>]]></value>
+				</constructor-arg>
+				<constructor-arg type="int" index="2">
+					<value>34</value>
+				</constructor-arg>
+				<constructor-arg value="2300" type="double" index="3"></constructor-arg>
+			</bean>
+		</property>
+		<!-- <null/> -->
+	</bean>
+
+	<bean id="person4" class="com.spring.test.beans.Person">
+		<property name="name" value="李白sss"></property>
+		<property name="age" value="894"></property>
+		<property name="car">
+			<bean class="com.spring.test.beans.Car">
+				<constructor-arg value="6666" type="java.lang.String" index="0"></constructor-arg>
+				<constructor-arg type="java.lang.String" index="1">
+					<value><![CDATA[<sha^>]]></value>
+				</constructor-arg>
+				<constructor-arg type="int" index="2">
+					<value>34</value>
+				</constructor-arg>
+				<constructor-arg value="2300" type="double" index="3"></constructor-arg>
+			</bean>
+		</property>
+		<property name="carlist">
+			<list>
+				<ref bean="car" />
+				<ref bean="car2" />
+			</list>
+		</property>
+		<property name="carset">
+			<set>
+				<ref bean="car2" />
+				<ref bean="car3" />
+			</set>
+		</property>
+		<property name="carmap">
+			<map>
+				<entry key="aaa">
+					<ref bean="car" />
+				</entry>
+				<entry key="bbb">
+					<ref bean="car3" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+
 </beans>
