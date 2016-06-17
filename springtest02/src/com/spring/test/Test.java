@@ -16,7 +16,7 @@ public class Test {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		Car car = context.getBean(Car.class);
+		Car car = (Car) context.getBean("car");
 		System.out.println(car);
 	}
 }
