@@ -18,29 +18,15 @@ import java.util.concurrent.Future;
 public class ExecutorsTest {
 	public static void main(String[] args) {
 		ExecutorsTest test = new ExecutorsTest();
-		System.err.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
-		System.err.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
-		System.err.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
-
 		List<Future<List<String>>> test2 = test.test(10, 100);
-		System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
-		System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
-		System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
-		System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
-		System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
 		List<String> list = new ArrayList<String>();
 		for (Future<List<String>> future : test2) {
 			try {
-				System.err.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
 				List<String> list2 = future.get();
-				System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
 				list.addAll(list2);
-				System.out.println("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (ExecutionException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -52,9 +38,7 @@ public class ExecutorsTest {
 		List<Future<List<String>>> fList = new ArrayList<Future<List<String>>>();
 		for (int i = 0; i < y; i++) {
 			fList.add(pool.submit(new ExecutorsTest.ExecutorsMain(i, num)));
-			System.err.println("sssssssssssssssssssssssssssssssssssssssss");
 		}
-		System.err.println("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
 		pool.shutdown();
 		return fList;
 	}
@@ -62,7 +46,12 @@ public class ExecutorsTest {
 	public List<String> getList(int indexi, int indexj) {
 		List<String> list = new ArrayList<String>();
 		for (int i = 0; i < indexj; i++) {
-			System.out.println(String.valueOf(indexi) + String.valueOf(i));
+			if (i % 2 == 0) {
+				System.out.println(String.valueOf(indexi) + String.valueOf(i));
+			} else {
+				System.err.println(String.valueOf(indexi) + String.valueOf(i));
+
+			}
 			list.add(String.valueOf(indexi) + String.valueOf(i));
 		}
 		return list;
