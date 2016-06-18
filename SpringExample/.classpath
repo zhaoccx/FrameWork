@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_79"/>
+	<classpathentry kind="lib" path="libs/commons-logging-1.2.jar" sourcepath="libs/commons-logging-1.2-src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/commons-logging-1.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-aop-4.1.0.RELEASE.jar" sourcepath="libs/spring-aop-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-aop-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-aspects-4.1.0.RELEASE.jar" sourcepath="libs/spring-aspects-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-aspects-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-beans-4.1.0.RELEASE.jar" sourcepath="libs/spring-beans-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-beans-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-context-4.1.0.RELEASE.jar" sourcepath="libs/spring-context-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-context-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-context-support-4.1.0.RELEASE.jar" sourcepath="libs/spring-context-support-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-context-support-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-core-4.1.0.RELEASE.jar" sourcepath="libs/spring-core-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-core-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-expression-4.1.0.RELEASE.jar" sourcepath="libs/spring-expression-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-expression-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-instrument-4.1.0.RELEASE.jar" sourcepath="libs/spring-instrument-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-instrument-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-instrument-tomcat-4.1.0.RELEASE.jar" sourcepath="libs/spring-instrument-tomcat-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-instrument-tomcat-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-jdbc-4.1.0.RELEASE.jar" sourcepath="libs/spring-jdbc-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-jdbc-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-jms-4.1.0.RELEASE.jar" sourcepath="libs/spring-jms-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-jms-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-messaging-4.1.0.RELEASE.jar" sourcepath="libs/spring-messaging-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-messaging-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-orm-4.1.0.RELEASE.jar" sourcepath="libs/spring-orm-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-orm-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-oxm-4.1.0.RELEASE.jar" sourcepath="libs/spring-oxm-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-oxm-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-test-4.1.0.RELEASE.jar" sourcepath="libs/spring-test-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-test-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-tx-4.1.0.RELEASE.jar" sourcepath="libs/spring-tx-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-tx-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-web-4.1.0.RELEASE.jar" sourcepath="libs/spring-web-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-web-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-webmvc-4.1.0.RELEASE.jar" sourcepath="libs/spring-webmvc-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-webmvc-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-webmvc-portlet-4.1.0.RELEASE.jar" sourcepath="libs/spring-webmvc-portlet-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-webmvc-portlet-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/spring-websocket-4.1.0.RELEASE.jar" sourcepath="libs/spring-websocket-4.1.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-websocket-4.1.0.RELEASE-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
