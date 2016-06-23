@@ -7,4 +7,23 @@
 			<value>25</value>
 		</property>
 	</bean>
+	
+	<bean id="cars" class="com.spring.demo.beans.Cars">
+		<constructor-arg value="xxxx"></constructor-arg>
+		<constructor-arg value="yyyy"></constructor-arg>
+		<constructor-arg value="360" type="int"></constructor-arg>
+	</bean>
+	
+	<bean id="cars2" class="com.spring.demo.beans.Cars">
+		<constructor-arg value="zzzzz"></constructor-arg>
+		<constructor-arg value="wwwwww"></constructor-arg>
+		<constructor-arg value="360" type="double"></constructor-arg>
+	</bean>
+	
+	<bean id="cars3" class="com.spring.demo.beans.Cars">
+		<constructor-arg value="zzzzz"></constructor-arg>
+		<constructor-arg value="wwwwww"></constructor-arg>
+		<constructor-arg value="36099" type="double"></constructor-arg>
+	</bean>
+	
 </beans>
