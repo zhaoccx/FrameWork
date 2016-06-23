@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
 
 	<bean id="dog" class="com.spring.demo.beans.Dog">
 		<property name="name" value="阿黄"></property>
@@ -7,23 +9,143 @@
 			<value>25</value>
 		</property>
 	</bean>
-	
+
 	<bean id="cars" class="com.spring.demo.beans.Cars">
-		<constructor-arg value="xxxx"></constructor-arg>
-		<constructor-arg value="yyyy"></constructor-arg>
+		<constructor-arg value="xxxx" index="0"></constructor-arg>
+		<constructor-arg value="yyyy" index="1"></constructor-arg>
 		<constructor-arg value="360" type="int"></constructor-arg>
 	</bean>
-	
+
 	<bean id="cars2" class="com.spring.demo.beans.Cars">
-		<constructor-arg value="zzzzz"></constructor-arg>
-		<constructor-arg value="wwwwww"></constructor-arg>
+		<constructor-arg value="zzzzz" index="1"></constructor-arg>
+		<constructor-arg value="wwwwww" index="0"></constructor-arg>
 		<constructor-arg value="360" type="double"></constructor-arg>
 	</bean>
-	
+
 	<bean id="cars3" class="com.spring.demo.beans.Cars">
-		<constructor-arg value="zzzzz"></constructor-arg>
-		<constructor-arg value="wwwwww"></constructor-arg>
-		<constructor-arg value="36099" type="double"></constructor-arg>
+		<constructor-arg value="eeeee"></constructor-arg>
+		<constructor-arg>
+			<value><![CDATA[<wfndfnef&^(>]]></value>
+		</constructor-arg>
+		<constructor-arg type="int">
+			<value>350</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="person" class="com.spring.demo.beans.Persons">
+		<property name="name" value="Jim"></property>
+		<property name="age" value="45"></property>
+		<property name="cars" ref="cars3"></property>
+	</bean>
+
+	<bean id="person2" class="com.spring.demo.beans.Persons">
+		<property name="name" value="TEF"></property>
+		<property name="age" value="32"></property>
+		<property name="cars">
+			<ref bean="cars2" />
+		</property>
+	</bean>
+
+	<bean id="person3" class="com.spring.demo.beans.Persons">
+		<property name="name" value="TEF"></property>
+		<property name="age" value="32"></property>
+		<property name="cars">
+			<bean class="com.spring.demo.beans.Cars">
+				<constructor-arg value="xxxx" index="0"></constructor-arg>
+				<constructor-arg value="yyyy" index="1"></constructor-arg>
+				<constructor-arg value="3650" type="int"></constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="person4" class="com.spring.demo.beans.Persons">
+		<constructor-arg value="UEEEEE"></constructor-arg>
+		<constructor-arg value="78"></constructor-arg>
+		<constructor-arg ref="cars2"></constructor-arg>
+	</bean>
+
+	<bean id="person5" class="com.spring.demo.beans.Persons">
+		<constructor-arg value="WEDSS"></constructor-arg>
+		<constructor-arg value="56"></constructor-arg>
+		<!-- <constructor-arg><null></null></constructor-arg> -->
+		<constructor-arg>
+			<null />
+		</constructor-arg>
+	</bean>
+
+	<bean id="person6" class="com.spring.demo.beans.Persons">
+		<constructor-arg value="EEEE"></constructor-arg>
+		<constructor-arg value="67"></constructor-arg>
+		<constructor-arg ref="cars"></constructor-arg>
+		<property name="cars.brand" value="QQQQQQQQQ"></property>
+		<property name="cars.corp" value="TTTTTTTTT"></property>
+		<property name="cars.price" value="45678"></property>
+		<property name="cars.maxSpeed" value="567"></property>
+	</bean>
+
+	<bean id="person7" class="com.spring.demo.beans.Persons">
+		<constructor-arg value="UUUU"></constructor-arg>
+		<constructor-arg value="98"></constructor-arg>
+		<constructor-arg ref="cars"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="cars" />
+				<ref bean="cars2" />
+				<bean class="com.spring.demo.beans.Cars">
+					<constructor-arg value="sss" index="0"></constructor-arg>
+					<constructor-arg value="hhh" index="1"></constructor-arg>
+					<constructor-arg value="360" type="int"></constructor-arg>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="person8" class="com.spring.demo.beans.Persons">
+		<constructor-arg value="88888"></constructor-arg>
+		<constructor-arg value="888"></constructor-arg>
+		<constructor-arg>
+			<set>
+				<ref bean="cars" />
+				<ref bean="cars2" />
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<bean id="person9" class="com.spring.demo.beans.Persons">
+		<constructor-arg value="9999"></constructor-arg>
+		<constructor-arg value="9999"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="SSS" value-ref="cars"></entry>
+				<entry key="WWW" value-ref="cars2"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="dataSource" class="com.spring.demo.beans.DataSource">
+		<property name="properties">
+			<props>
+				<prop key="user">user</prop>
+				<prop key="password">root</prop>
+				<prop key="jdbcUrl">jdbc:mysql:///text</prop>
+				<prop key="driverClass">com.mysql.jdbc.Driver</prop>
+			</props>
+		</property>
+	</bean>
+
+	<util:list id="carlist">
+		<ref bean="cars" />
+		<ref bean="cars3" />
+	</util:list>
+
+	<bean id="person10" class="com.spring.demo.beans.Persons">
+		<constructor-arg value="9999"></constructor-arg>
+		<constructor-arg value="9999"></constructor-arg>
+		<constructor-arg ref="carlist"></constructor-arg>
 	</bean>
 	
+	
+	<bean id="person11" class="com.spring.demo.beans.Persons" p:name="bbbbbbbb" p:age="90" p:cList-ref="carlist">
+	</bean>
+	 
 </beans>

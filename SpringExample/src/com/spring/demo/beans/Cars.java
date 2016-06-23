@@ -14,6 +14,66 @@ public class Cars {
 	private double maxSpeed;
 
 	/**
+	 * @return the brand
+	 */
+	public String getBrand() {
+		return brand;
+	}
+
+	/**
+	 * @param brand
+	 *            the brand to set
+	 */
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	/**
+	 * @return the corp
+	 */
+	public String getCorp() {
+		return corp;
+	}
+
+	/**
+	 * @param corp
+	 *            the corp to set
+	 */
+	public void setCorp(String corp) {
+		this.corp = corp;
+	}
+
+	/**
+	 * @return the price
+	 */
+	public int getPrice() {
+		return price;
+	}
+
+	/**
+	 * @param price
+	 *            the price to set
+	 */
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	/**
+	 * @return the maxSpeed
+	 */
+	public double getMaxSpeed() {
+		return maxSpeed;
+	}
+
+	/**
+	 * @param maxSpeed
+	 *            the maxSpeed to set
+	 */
+	public void setMaxSpeed(double maxSpeed) {
+		this.maxSpeed = maxSpeed;
+	}
+
+	/**
 	 * 
 	 */
 	public Cars() {
