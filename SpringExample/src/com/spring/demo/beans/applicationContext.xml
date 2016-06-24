@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
 
 	<bean id="dog" class="com.spring.demo.beans.Dog">
@@ -147,9 +149,31 @@
 	<bean id="person11" class="com.spring.demo.beans.Persons" p:name="bbbbbbbb" p:age="90" p:listCars-ref="carlist">
 	</bean>
 
-	<bean id="address" class="com.spring.demo.beans.Address" p:city="湎 枯" p:street="中国"></bean>
+	<bean id="car" parent="cars"></bean>
+	<bean id="person12" class="com.spring.demo.beans.Persons" p:name="bbbbbbbb" p:age="90" depends-on="car,cars carlist">
+	</bean>
 
+	<bean id="abs" abstract="true" p:abc="ssssssssssss">
+		<property name="city" value="XXXXXXXXXXXXXXXXXXXXXXXXXXX"></property>
+	</bean>
+
+	<bean id="address" class="com.spring.demo.beans.Address" p:city="湎 枯" p:street="中国" scope="prototype"></bean>
+
+	<bean id="address2" class="com.spring.demo.beans.Address" p:street="XXX" parent="address"></bean>
+
+	<bean id="address3" class="com.spring.demo.beans.Address" parent="abs"></bean>
 	<bean id="man" class="com.spring.demo.beans.Man" p:name="gggggggggg" autowire="byName">
 	</bean>
-	
+
+	<context:property-placeholder location="classpath:com/spring/demo/beans/db.properties" />
+	<!-- <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource"> <property name="user" value="root"></property> <property name="password" value="root"></property> <property name="driverClass" value="com.mysql.jdbc.Driver"></property> <property name="jdbcUrl" value="jdbc:mysql:///test"></property> </bean> -->
+	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="user" value="${user}"></property>
+		<property name="password" value="${password}"></property>
+		<property name="driverClass" value="${driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbcUrl}"></property>
+	</bean>
+
+
+
 </beans>

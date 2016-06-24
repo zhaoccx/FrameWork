@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/com/spring/demo/beans/applicationContext.xml</config>
 		<config>src/com/spring/helo/beans.xml</config>
+		<config>src/com/spring/demo/spel/spring-spel.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

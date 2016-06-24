@@ -3,8 +3,14 @@
  */
 package com.spring.demo.beans;
 
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /**
  * @author zhaocc
@@ -51,9 +57,32 @@ public class DemoTest {
 
 		persons = (Persons) context.getBean("person11");
 		System.out.println(persons);
+		persons = (Persons) context.getBean("person12");
+		System.out.println(persons);
 
 		Man bean2 = (Man) context.getBean("man");
 		System.out.println(bean2);
+
+		Address bean3 = (Address) context.getBean("address");
+		System.out.println(bean3);
+		bean3 = (Address) context.getBean("address2");
+		System.out.println(bean3);
+		bean3 = (Address) context.getBean("address3");
+		System.out.println(bean3);
+
+		Address bAddress = (Address) context.getBean("address");
+		System.err.println(bAddress);
+		Address aAddress = (Address) context.getBean("address");
+		System.err.println(bAddress);
+		System.out.println(aAddress == bAddress);
+
+		DataSource datasource = context.getBean(ComboPooledDataSource.class);
+		try {
+			System.out.println(datasource.getConnection());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		context.close();
 	}
 }

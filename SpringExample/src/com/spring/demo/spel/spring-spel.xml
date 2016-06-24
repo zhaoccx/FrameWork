@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cat" class="com.spring.demo.spel.Cat">
+		<property name="coler" value="#{'ddddd'}"></property>
+		<property name="weight" value="#{6+9}"></property>
+		<property name="oooo" value="#{T(java.lang.Math).PI * 25}"></property>
+	</bean>
+
+	<bean id="fash" class="com.spring.demo.spel.Fash">
+		<property name="coler" value="red"></property>
+		<property name="size" value="589"></property>
+	</bean>
+
+	<bean id="woman" class="com.spring.demo.spel.Woman">
+		<property name="name" value="李折腾"></property>
+		<property name="coler" value="#{fash.coler}"></property>
+	</bean>
+</beans>

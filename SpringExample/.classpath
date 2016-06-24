@@ -107,5 +107,7 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/SpringExample/libs/spring-websocket-4.1.0.RELEASE-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="libs/c3p0-0.9.1.2.jar"/>
+	<classpathentry kind="lib" path="libs/mysql-connector-java-5.1.7-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
