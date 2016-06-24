@@ -15,5 +15,6 @@
 	<bean id="woman" class="com.spring.demo.spel.Woman">
 		<property name="name" value="李折腾"></property>
 		<property name="coler" value="#{fash.coler}"></property>
+		<property name="cyscole" value="#{cat.oooo > 25 ? 69.23 : 36.25}"></property>
 	</bean>
 </beans>
