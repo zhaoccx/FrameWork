@@ -16,9 +16,9 @@ public class Persons {
 	private String name;
 	private int age;
 	private Cars cars;
-	private List<Cars> cList;
-	private Set<Cars> sCars;
-	private Map<String, Cars> map;
+	private List<Cars> listCars;
+	private Set<Cars> setCars;
+	private Map<String, Cars> mapCars;
 
 	/**
 	 * @return the name
@@ -66,48 +66,48 @@ public class Persons {
 	}
 
 	/**
-	 * @return the cList
+	 * @return the listCars
 	 */
-	public List<Cars> getcList() {
-		return cList;
+	public List<Cars> getListCars() {
+		return listCars;
 	}
 
 	/**
-	 * @param cList
-	 *            the cList to set
+	 * @param listCars
+	 *            the listCars to set
 	 */
-	public void setcList(List<Cars> cList) {
-		this.cList = cList;
+	public void setListCars(List<Cars> listCars) {
+		this.listCars = listCars;
 	}
 
 	/**
-	 * @return the sCars
+	 * @return the setCars
 	 */
-	public Set<Cars> getsCars() {
-		return sCars;
+	public Set<Cars> getSetCars() {
+		return setCars;
 	}
 
 	/**
-	 * @param sCars
-	 *            the sCars to set
+	 * @param setCars
+	 *            the setCars to set
 	 */
-	public void setsCars(Set<Cars> sCars) {
-		this.sCars = sCars;
+	public void setSetCars(Set<Cars> setCars) {
+		this.setCars = setCars;
 	}
 
 	/**
-	 * @return the map
+	 * @return the mapCars
 	 */
-	public Map<String, Cars> getMap() {
-		return map;
+	public Map<String, Cars> getMapCars() {
+		return mapCars;
 	}
 
 	/**
-	 * @param map
-	 *            the map to set
+	 * @param mapCars
+	 *            the mapCars to set
 	 */
-	public void setMap(Map<String, Cars> map) {
-		this.map = map;
+	public void setMapCars(Map<String, Cars> mapCars) {
+		this.mapCars = mapCars;
 	}
 
 	/**
@@ -132,39 +132,97 @@ public class Persons {
 	/**
 	 * @param name
 	 * @param age
-	 * @param cars
-	 * @param cList
+	 * @param listCars
 	 */
-	public Persons(String name, int age, Cars cars, List<Cars> cList) {
+	public Persons(String name, int age, List<Cars> listCars) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.listCars = listCars;
+	}
+
+	/**
+	 * @param name
+	 * @param age
+	 * @param setCars
+	 */
+	public Persons(String name, int age, Set<Cars> setCars) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.setCars = setCars;
+	}
+
+	/**
+	 * @param name
+	 * @param age
+	 * @param mapCars
+	 */
+	public Persons(String name, int age, Map<String, Cars> mapCars) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.mapCars = mapCars;
+	}
+
+	/**
+	 * @param name
+	 * @param age
+	 * @param cars
+	 * @param mapCars
+	 */
+	public Persons(String name, int age, Cars cars, Map<String, Cars> mapCars) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.cars = cars;
-		this.cList = cList;
+		this.mapCars = mapCars;
 	}
 
 	/**
 	 * @param name
 	 * @param age
-	 * @param sCars
+	 * @param cars
+	 * @param setCars
 	 */
-	public Persons(String name, int age, Set<Cars> sCars) {
+	public Persons(String name, int age, Cars cars, Set<Cars> setCars) {
 		super();
 		this.name = name;
 		this.age = age;
-		this.sCars = sCars;
+		this.cars = cars;
+		this.setCars = setCars;
 	}
 
 	/**
 	 * @param name
 	 * @param age
-	 * @param map
+	 * @param cars
+	 * @param listCars
 	 */
-	public Persons(String name, int age, Map<String, Cars> map) {
+	public Persons(String name, int age, Cars cars, List<Cars> listCars) {
 		super();
 		this.name = name;
 		this.age = age;
-		this.map = map;
+		this.cars = cars;
+		this.listCars = listCars;
+	}
+
+	/**
+	 * @param name
+	 * @param age
+	 * @param cars
+	 * @param listCars
+	 * @param setCars
+	 * @param mapCars
+	 */
+	public Persons(String name, int age, Cars cars, List<Cars> listCars, Set<Cars> setCars, Map<String, Cars> mapCars) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.cars = cars;
+		this.listCars = listCars;
+		this.setCars = setCars;
+		this.mapCars = mapCars;
 	}
 
 	/*
@@ -174,7 +232,7 @@ public class Persons {
 	 */
 	@Override
 	public String toString() {
-		return "Persons [name=" + name + ", age=" + age + ", cars=" + cars + ", cList=" + cList + ", sCars=" + sCars + ", map=" + map + "]";
+		return "Persons [name=" + name + ", age=" + age + ", cars=" + cars + ", listCars=" + listCars + ", setCars=" + setCars + ", mapCars=" + mapCars + "]";
 	}
 
 }

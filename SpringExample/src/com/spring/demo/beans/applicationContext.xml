@@ -145,7 +145,7 @@
 	</bean>
 	
 	
-	<bean id="person11" class="com.spring.demo.beans.Persons" p:name="bbbbbbbb" p:age="90" p:cList-ref="carlist">
+	<bean id="person11" class="com.spring.demo.beans.Persons" p:name="bbbbbbbb" p:age="90" p:listCars-ref="carlist">
 	</bean>
 	 
 </beans>
