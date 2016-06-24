@@ -48,8 +48,12 @@ public class DemoTest {
 		System.out.println(dataSource);
 		persons = (Persons) context.getBean("person10");
 		System.out.println(persons);
+
 		persons = (Persons) context.getBean("person11");
 		System.out.println(persons);
+
+		Man bean2 = (Man) context.getBean("man");
+		System.out.println(bean2);
 		context.close();
 	}
 }
