@@ -87,4 +87,8 @@ public class Man {
 		return "Man [name=" + name + ", address=" + address + ", cars=" + cars + "]";
 	}
 
+	public void hel() {
+		System.out.println("sssssss");
+	}
+
 }
