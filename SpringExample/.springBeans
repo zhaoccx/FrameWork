@@ -12,6 +12,8 @@
 		<config>src/com/spring/demo/spel/spring-spel.xml</config>
 		<config>src/com/spring/demo/cycle/beans-cycle.xml</config>
 		<config>src/com/spring/demo/factory/bean-factory.xml</config>
+		<config>src/com/spring/demo/factorybean/bean-factorybean.xml</config>
+		<config>src/com/spring/demo/annotation/bean-annotation.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
