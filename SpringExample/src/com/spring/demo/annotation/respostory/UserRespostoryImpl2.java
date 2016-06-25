@@ -12,8 +12,8 @@ import com.spring.demo.annotation.res.Resu;
  * @author zhaocc
  *
  */
-@Repository()
-public class UserRespostoryImpl implements UserRespostory {
+@Repository
+public class UserRespostoryImpl2 implements UserRespostory {
 
 	@Autowired(required = false)
 	private Resu resu;
@@ -25,7 +25,7 @@ public class UserRespostoryImpl implements UserRespostory {
 	 */
 	@Override
 	public void respostor() {
-		System.out.println("UserRespostoryImpl respostor  ...........");
+		System.out.println("UserRespostoryImpl2 respostor  ...........");
 		System.out.println(resu);
 	}
 

@@ -14,6 +14,7 @@
 		<config>src/com/spring/demo/factory/bean-factory.xml</config>
 		<config>src/com/spring/demo/factorybean/bean-factorybean.xml</config>
 		<config>src/com/spring/demo/annotation/bean-annotation.xml</config>
+		<config>src/com/spring/demo/general/di/beans-general-di.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
