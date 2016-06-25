@@ -35,7 +35,7 @@ public class TestAnnotation {
 		try {
 
 			UserContorller userContorller = (UserContorller) context.getBean("userContorller");
-			userContorller.cont();
+			userContorller.contorl();
 		} catch (BeansException e) {
 			e.printStackTrace();
 		}
