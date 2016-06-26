@@ -10,7 +10,8 @@ package com.spring.aop.cala;
 public class ArchTest {
 	public static void main(String[] args) {
 		// testBasePoxy();
-		testBasePoxyLoginfo();
+		// testBasePoxyLoginfo();
+		testBaseVaditPoxyLoginfo();
 	}
 
 	public static void testBasePoxy() {
@@ -31,6 +32,16 @@ public class ArchTest {
 		ArchimlImplProxyLog<IArch> log = new ArchimlImplProxyLog<IArch>(new ArchImpl());
 		IArch proxyinit = log.getProxyinit(new ArchImpl());
 		System.out.println(proxyinit.add(3, 4));
+		System.out.println(proxyinit.sub(3, 4));
+		System.out.println(proxyinit.div(3, 4));
+		System.out.println(proxyinit.mul(3, 4));
+	}
+
+	public static void testBaseVaditPoxyLoginfo() {
+
+		ArchimplVaidatProxyLog<IArch> log = new ArchimplVaidatProxyLog<IArch>(new ArchImpl());
+		IArch proxyinit = log.getProxyinit(new ArchImpl());
+		System.out.println(proxyinit.add(3, 5));
 		System.out.println(proxyinit.sub(3, 4));
 		System.out.println(proxyinit.div(3, 4));
 		System.out.println(proxyinit.mul(3, 4));

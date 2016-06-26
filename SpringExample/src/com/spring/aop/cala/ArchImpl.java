@@ -3,10 +3,13 @@
  */
 package com.spring.aop.cala;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @author zhaocc
  *
  */
+@Component
 public class ArchImpl implements IArch {
 
 	/*
