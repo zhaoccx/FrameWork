@@ -17,9 +17,10 @@ import java.util.concurrent.Future;
  */
 public class ExecutorsTest {
 	public static void main(String[] args) {
+		long timone = System.currentTimeMillis();
 		ExecutorsTest test = new ExecutorsTest();
 		List<Future<List<String>>> test2 = test.test(10, 100000);
-		List<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<>();
 		for (Future<List<String>> future : test2) {
 			try {
 				List<String> list2 = future.get();
@@ -30,12 +31,18 @@ public class ExecutorsTest {
 				e.printStackTrace();
 			}
 		}
+		System.err.println(list.size());
+		System.err.println(list.size());
+		System.err.println(list.size());
+		System.err.println(list.size());
+		System.err.println(list.size());
 		System.out.println(list.size());
+		System.err.println(System.currentTimeMillis() - timone);
 	}
 
 	public List<Future<List<String>>> test(int y, int num) {
 		ExecutorService pool = Executors.newFixedThreadPool(y);
-		List<Future<List<String>>> fList = new ArrayList<Future<List<String>>>();
+		List<Future<List<String>>> fList = new ArrayList<>();
 		for (int i = 0; i < y; i++) {
 			fList.add(pool.submit(new ExecutorsMain(i, num)));
 		}
@@ -51,7 +58,7 @@ public class ExecutorsTest {
 	 * @return
 	 */
 	public List<String> getList(int indexi, int indexj) {
-		List<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<>();
 		for (int i = 0; i < indexj; i++) {
 			if (i % 2 == 0) {
 				System.out.println(String.valueOf(indexi) + String.valueOf(i));
@@ -65,7 +72,7 @@ public class ExecutorsTest {
 	}
 
 	class ExecutorsMain implements Callable<List<String>> {
-		
+
 		private int indexi;
 		private int indexj;
 
