@@ -16,9 +16,7 @@ public class AopTest {
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/aop/cala/bean-aop.xml");
 		IArch bean = (IArch) context.getBean("archImpl");
 		System.out.println("result: " + bean.add(3, 5));
-		bean = (IArch) context.getBean("archImpl");
 		System.out.println("result: " + bean.sub(3, 5));
-		bean = (IArch) context.getBean("archImpl");
 		System.out.println("result: " + bean.div(3, 2));
 	}
 }
