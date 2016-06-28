@@ -6,6 +6,22 @@
 
 	<context:component-scan base-package="com.spring.aop.cala"></context:component-scan>
 
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<!-- <aop:aspectj-autoproxy></aop:aspectj-autoproxy> -->
+	
+	
+	<bean id="iarch" class="com.spring.aop.cala.ArchImpl"></bean>
+	<bean id="loggingAspect2" class="com.spring.aop.cala.LoggingAspect2"></bean>
+	<bean id="vaditAspect2" class="com.spring.aop.cala.VaditAspect2"></bean>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(public double com.spring.aop.cala.IArch.*(..))" id="pointcut"/>
+		<aop:aspect ref="loggingAspect2" order="1">
+			<aop:before method="beforeMethed" pointcut-ref="pointcut"/>
+			<aop:after method="afterMethed" pointcut-ref="pointcut"/>
+			<aop:after-returning method="afterMethedReturning" pointcut-ref="pointcut" returning="result"/>
+			<aop:after-throwing method="throwException" pointcut-ref="pointcut" throwing="exception"/>
+			<aop:around method="aroudMethed" pointcut-ref="pointcut" arg-names="proceedingJoinPoint"/>
+		</aop:aspect>
+	</aop:config>
 
 </beans>
