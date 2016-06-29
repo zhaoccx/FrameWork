@@ -103,7 +103,7 @@ public class JDBCJunitTest {
 	public void testNamedPareTest() {
 		String string = "INSERT INTO department (deptname) VALUES (:deptname)";
 		Map<String, Object> map = new HashMap<>();
-		map.put("deptname", "就业部");
+		map.put("deptname", "劳动部");
 		namedParameterJdbcTemplate.update(string, map);
 	}
 
@@ -111,9 +111,33 @@ public class JDBCJunitTest {
 	public void testNamedPareTest2() {
 		String string = "INSERT INTO department (deptname) VALUES (:deptname)";
 		Department department = new Department();
-		department.setDeptname("教育部");
+		department.setDeptname("劳动部");
 		SqlParameterSource paramSource = new BeanPropertySqlParameterSource(department);
 		namedParameterJdbcTemplate.update(string, paramSource);
 	}
 
+	@SuppressWarnings("unchecked")
+	@Test
+	public void testNamedPareTestMap() {
+		String string = "INSERT INTO department (deptname) VALUES (:deptname)";
+		Map<String, Object>[] maps = new Map[2];
+		maps[0] = new HashMap<>();
+		maps[0].put("deptname", "科研部");
+		maps[1] = new HashMap<>();
+		maps[1].put("deptname", "人事部");
+		namedParameterJdbcTemplate.batchUpdate(string, maps);
+	}
+
+	@Test
+	public void testNamedPareTestMap2() {
+		String string = "INSERT INTO department (deptname) VALUES (:deptname)";
+		SqlParameterSource[] sources = new SqlParameterSource[2];
+		Department department = new Department();
+		department.setDeptname("行政部");
+		sources[0] = new BeanPropertySqlParameterSource(department);
+		department = new Department();
+		department.setDeptname("服务部");
+		sources[1] = new BeanPropertySqlParameterSource(department);
+		namedParameterJdbcTemplate.batchUpdate(string, sources);
+	}
 }
