@@ -5,7 +5,9 @@ package com.spring.jdbctest;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -15,6 +17,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
 /**
  * @author zhaocc
@@ -26,11 +31,13 @@ public class JDBCJunitTest {
 	private JdbcTemplate jdbcTemplate = null;
 	private EmployeeDao employeeDao = null;
 	private DepartmentDao departmentDao = null;
+	private NamedParameterJdbcTemplate namedParameterJdbcTemplate = null;
 	{
 		context = new ClassPathXmlApplicationContext("com/spring/jdbctest/beans-jdbc.xml");
 		jdbcTemplate = (JdbcTemplate) context.getBean("jdbcTemplate");
 		employeeDao = context.getBean(EmployeeDao.class);
 		departmentDao = context.getBean(DepartmentDao.class);
+		namedParameterJdbcTemplate = context.getBean(NamedParameterJdbcTemplate.class);
 	}
 
 	@Test
@@ -90,6 +97,23 @@ public class JDBCJunitTest {
 		String sql = "SELECT count(id) from employees";
 		Long long1 = jdbcTemplate.queryForObject(sql, Long.class);
 		System.out.println(long1);
+	}
+
+	@Test
+	public void testNamedPareTest() {
+		String string = "INSERT INTO department (deptname) VALUES (:deptname)";
+		Map<String, Object> map = new HashMap<>();
+		map.put("deptname", "就业部");
+		namedParameterJdbcTemplate.update(string, map);
+	}
+
+	@Test
+	public void testNamedPareTest2() {
+		String string = "INSERT INTO department (deptname) VALUES (:deptname)";
+		Department department = new Department();
+		department.setDeptname("教育部");
+		SqlParameterSource paramSource = new BeanPropertySqlParameterSource(department);
+		namedParameterJdbcTemplate.update(string, paramSource);
 	}
 
 }
