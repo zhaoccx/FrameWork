@@ -32,12 +32,16 @@ public class JDBCJunitTest {
 	private EmployeeDao employeeDao = null;
 	private DepartmentDao departmentDao = null;
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate = null;
+	private IBookDao iBookDao = null;
+	private IBookShopServer ibBookShopServer = null;
 	{
 		context = new ClassPathXmlApplicationContext("com/spring/jdbctest/beans-jdbc.xml");
 		jdbcTemplate = (JdbcTemplate) context.getBean("jdbcTemplate");
 		employeeDao = context.getBean(EmployeeDao.class);
 		departmentDao = context.getBean(DepartmentDao.class);
 		namedParameterJdbcTemplate = context.getBean(NamedParameterJdbcTemplate.class);
+		iBookDao = context.getBean(IBookDao.class);
+		ibBookShopServer = context.getBean(IBookShopServer.class);
 	}
 
 	@Test
@@ -139,5 +143,26 @@ public class JDBCJunitTest {
 		department.setDeptname("服务部");
 		sources[1] = new BeanPropertySqlParameterSource(department);
 		namedParameterJdbcTemplate.batchUpdate(string, sources);
+	}
+
+	@Test
+	public void testBookStrByisbn() {
+		Integer price = iBookDao.findBookPrice("1001");
+		System.out.println(price);
+	}
+
+	@Test
+	public void testBookShopDaoUpdateBookstock() {
+		iBookDao.updatBookStore("1001");
+	}
+
+	@Test
+	public void testBookStiUserankdfds() {
+		iBookDao.updateUserAccount("AA", 10);
+	}
+
+	@Test
+	public void testBookddsafdsfsa() {
+		ibBookShopServer.purchase("AA", "1001");
 	}
 }

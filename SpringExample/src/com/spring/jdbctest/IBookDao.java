@@ -8,7 +8,10 @@ package com.spring.jdbctest;
  *
  */
 public interface IBookDao {
-	public int findBookPrice();
+	public int findBookPrice(String isbn);
 
-	public void updatBookStore();
+	public void updatBookStore(String isbn);
+
+	public void updateUserAccount(String username, int price);
+
 }
