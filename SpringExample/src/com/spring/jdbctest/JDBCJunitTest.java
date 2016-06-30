@@ -5,6 +5,7 @@ package com.spring.jdbctest;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,6 +35,7 @@ public class JDBCJunitTest {
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate = null;
 	private IBookDao iBookDao = null;
 	private IBookShopServer ibBookShopServer = null;
+	private IBookShopServerList ibBookShopServerList = null;
 	{
 		context = new ClassPathXmlApplicationContext("com/spring/jdbctest/beans-jdbc.xml");
 		jdbcTemplate = (JdbcTemplate) context.getBean("jdbcTemplate");
@@ -42,6 +44,7 @@ public class JDBCJunitTest {
 		namedParameterJdbcTemplate = context.getBean(NamedParameterJdbcTemplate.class);
 		iBookDao = context.getBean(IBookDao.class);
 		ibBookShopServer = context.getBean(IBookShopServer.class);
+		ibBookShopServerList = context.getBean(IBookShopServerList.class);
 	}
 
 	@Test
@@ -164,5 +167,10 @@ public class JDBCJunitTest {
 	@Test
 	public void testBookddsafdsfsa() {
 		ibBookShopServer.purchase("AA", "1001");
+	}
+
+	@Test
+	public void testBookpuseList() {
+		ibBookShopServerList.purchase("AA", Arrays.asList("1001", "1002"));
 	}
 }
