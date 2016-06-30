@@ -8,9 +8,10 @@ public class UserService {
 
 	@Autowired
 	private HelloWorld helloWorld;
-	
+
 	public UserService() {
 		System.out.println("UserService Constructor...");
+		helloWorld.toString();
 	}
-	
+
 }
