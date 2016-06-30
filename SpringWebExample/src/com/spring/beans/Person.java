@@ -7,6 +7,7 @@ package com.spring.beans;
  * @author zhaocc
  *
  */
+
 public class Person {
 	private String name;
 

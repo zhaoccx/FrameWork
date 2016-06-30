@@ -6,5 +6,10 @@
 		<property name="name" value="中国好声音"></property>
 	</bean>
 
+	<bean id="personAction" class="com.spring.action.PersonAction" scope="prototype">
+		<property name="personService" ref="personService"></property>
+	</bean>
+
+	<bean id="personService" class="com.spring.service.PersonService"></bean>
 
 </beans>
