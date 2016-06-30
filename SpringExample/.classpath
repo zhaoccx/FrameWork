@@ -116,6 +116,14 @@
 	<classpathentry kind="lib" path="libs/com.springsource.net.sf.cglib-2.2.0.jar" sourcepath="libs/com.springsource.net.sf.cglib-sources-2.2.0.jar"/>
 	<classpathentry kind="lib" path="libs/com.springsource.org.aopalliance-1.0.0.jar" sourcepath="libs/com.springsource.org.aopalliance-sources-1.0.0.jar"/>
 	<classpathentry kind="lib" path="libs/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar" sourcepath="libs/com.springsource.org.aspectj.weaver-sources-1.6.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs-hiber/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="libs-hiber/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="libs-hiber/hibernate-commons-annotations-4.0.2.Final.jar"/>
+	<classpathentry kind="lib" path="libs-hiber/hibernate-core-4.2.4.Final.jar"/>
+	<classpathentry kind="lib" path="libs-hiber/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="libs-hiber/javassist-3.15.0-GA.jar"/>
+	<classpathentry kind="lib" path="libs-hiber/jboss-logging-3.1.0.GA.jar"/>
+	<classpathentry kind="lib" path="libs-hiber/jboss-transaction-api_1.1_spec-1.0.1.Final.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

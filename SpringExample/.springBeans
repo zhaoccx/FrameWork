@@ -17,6 +17,7 @@
 		<config>src/com/spring/demo/general/di/beans-general-di.xml</config>
 		<config>src/com/spring/aop/cala/bean-aop.xml</config>
 		<config>src/com/spring/jdbctest/beans-jdbc.xml</config>
+		<config>src/com/spring/hiber/beans-hibernate.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
