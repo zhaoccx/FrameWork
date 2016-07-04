@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.spring.mvc.hello.handlers;
+package com.spring.mvc.ajax;
 
 //import com.alibaba.fastjson.JSON;
 import java.io.IOException;
