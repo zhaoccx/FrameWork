@@ -37,12 +37,7 @@ public class AjaxTest {
 	@RequestMapping(value = "/ajaxget-{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public String showAjax(HttpServletRequest request, HttpServletResponse response, @PathVariable(value = "id") Object object) {
-		System.out.println("ssssssssssssssssssssssssss");
-		System.out.println("ssssssssssssssssssssssssss");
-		System.out.println("ssssssssssssssssssssssssss");
-		System.out.println("ssssssssssssssssssssssssss");
-		System.out.println("ssssssssssssssssssssssssss");
-		System.out.println("ssssssssssssssssssssssssss");
+		System.out.println("ajax get methed start");
 
 		PrintWriter printWriter = null;
 		try {
@@ -56,7 +51,7 @@ public class AjaxTest {
 				printWriter.close();
 			}
 		}
-
+		System.out.println("ajax get methed end");
 		return null;
 	}
 
@@ -68,18 +63,16 @@ public class AjaxTest {
 	 */
 	@RequestMapping(value = "/ajaxpost", method = RequestMethod.POST)
 	public void ajaxDatas(HttpServletRequest request, HttpServletResponse response, User user) {
-		System.out.println("sssssssssssssssssss");
-		System.out.println("sssssssssssssssssss");
-		System.out.println("sssssssssssssssssss");
-		System.out.println("sssssssssssssssssss");
+		System.out.println("ajax post methed start");
 		String jsonResult = getJSONString(request);
 		renderData(response, jsonResult);
+		System.out.println("ajax post methed end");
 	}
 
 	private String getJSONString(HttpServletRequest request) {
 		// 故意构造一个数组，使返回的数据为json数组，数据更复杂些
 		List<Map<String, Object>> datas = new ArrayList<>(5);
-		Map<String, Object> map1 = new HashMap<>(10);
+		Map<String, Object> map1 = new HashMap<String, Object>(10);
 		// 可以获得ajax请求中的参数
 		map1.put("a", request.getParameter("username"));
 		map1.put("b", request.getParameter("password"));
