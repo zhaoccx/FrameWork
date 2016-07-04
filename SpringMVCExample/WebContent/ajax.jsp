@@ -40,18 +40,16 @@ body, input, select, button, h1 {
 
 	<script>
 		document.getElementById("search").onclick = function() {
-			debugger;
 			var request = new XMLHttpRequest();
-			request.open("GET", "/springajax/ajaxget");
+			request.open("GET", "springajax/ajaxget-" + document.getElementById("keyword").value);
 			request.send();
 			request.onreadystatechange = function() {
 				if (request.readyState === 4) {
 					if (request.status === 200) {
-						var data = JSON.parse(request.responseText);
-						if (data.success) {
-							document.getElementById("searchResult").innerHTML = data.msg;
+						if (request.responseText) {
+							document.getElementById("searchResult").innerHTML = request.responseText;
 						} else {
-							document.getElementById("searchResult").innerHTML = "出现错误：" + data.msg;
+							document.getElementById("searchResult").innerHTML = "出现错误：";
 						}
 					} else {
 						alert("发生错误：" + request.status);
@@ -62,18 +60,17 @@ body, input, select, button, h1 {
 
 		document.getElementById("save").onclick = function() {
 			var request = new XMLHttpRequest();
-			request.open("POST", "serverjson.php");
-			var data = "name=" + document.getElementById("staffName").value + "&number=" + document.getElementById("staffNumber").value + "&sex=" + document.getElementById("staffSex").value + "&job=" + document.getElementById("staffJob").value;
-			request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			request.open("POST", "springajax/ajaxpost");
+			var data = "username=" + document.getElementById("staffName").value + "&password=" + document.getElementById("staffNumber").value + "&email=" + document.getElementById("staffSex").value + "&age=" + document.getElementById("staffJob").value;
+			request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");//post提交设置项
 			request.send(data);
 			request.onreadystatechange = function() {
 				if (request.readyState === 4) {
 					if (request.status === 200) {
-						var data = JSON.parse(request.responseText);
-						if (data.success) {
-							document.getElementById("createResult").innerHTML = data.msg;
+						if (request.responseText) {
+							document.getElementById("createResult").innerHTML = request.responseText;
 						} else {
-							document.getElementById("createResult").innerHTML = "出现错误：" + data.msg;
+							document.getElementById("createResult").innerHTML = "出现错误：";
 						}
 					} else {
 						alert("发生错误：" + request.status);
