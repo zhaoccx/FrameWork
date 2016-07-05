@@ -10,7 +10,8 @@ body, input, select, button, h1 {
 	line-height: 1.7;
 }
 </style>
-<script type="text/javascript" src="/jquery/jquery-3.0.0.js"></script>
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script> -->
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 
 
 </head>
@@ -42,26 +43,53 @@ body, input, select, button, h1 {
 	<button id="save">保存</button>
 	<p id="createResult"></p>
 	<script type="text/javascript">
-		document.getElementById("save").onclick = function() {
-			var request = new XMLHttpRequest();
-			request.open("POST", "springajax/ajaxpost");
-			var data = "username=" + document.getElementById("staffName").value + "&password=" + document.getElementById("staffNumber").value + "&email=" + document.getElementById("staffSex").value + "&age=" + document.getElementById("staffJob").value;
-			request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");//post提交设置项
-			request.send(data);
-			request.onreadystatechange = function() {
-				if (request.readyState === 4) {
-					if (request.status === 200) {
-						if (request.responseText) {
-							document.getElementById("createResult").innerHTML = request.responseText;
-						} else {
-							document.getElementById("createResult").innerHTML = "出现错误：";
-						}
-					} else {
-						alert("发生错误：" + request.status);
+		$(function() {
+			$("#search").click(function() {
+				$("#searchResult").load("springajax/ajaxget-" + $("#keyword").val(), null, function(data) {
+					if (data) {
+						$("#searchResult").val(data);
 					}
-				}
-			}
-		}
+				});
+			});
+
+			$("#save").click(function() {
+				var args = {
+					username : $("#staffName").val(),
+					password : $("#staffNumber").val(),
+					email : $("#staffSex").val(),
+					age : $("#staffJob").val()
+				};
+				//$.post("springajax/ajaxpost", args, function(data) {
+				//	debugger;
+				//	if (data) {
+				//		$("#createResult").append(data);
+				//	}
+				//});
+
+				$.ajax({
+					type : "POST",
+					url : "springajax/ajaxpost",
+					data : {
+						username : $("#staffName").val(),
+						password : $("#staffNumber").val(),
+						email : $("#staffSex").val(),
+						age : $("#staffJob").val()
+					},
+					//dataType : "json",
+					success : function(datas) {
+						//	debugger;
+						if (datas) {
+							$("#createResult").append(datas);
+						}
+					},
+					error : function(datas) {
+						//	debugger;
+						alert("有异常：" + datas);
+					}
+				});
+			});
+
+		});
 	</script>
 </body>
 </html>

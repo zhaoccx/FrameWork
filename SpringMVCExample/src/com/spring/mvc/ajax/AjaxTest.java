@@ -64,6 +64,7 @@ public class AjaxTest {
 	@RequestMapping(value = "/ajaxpost", method = RequestMethod.POST)
 	public void ajaxDatas(HttpServletRequest request, HttpServletResponse response, User user) {
 		System.out.println("ajax post methed start");
+		System.out.println(user);
 		String jsonResult = getJSONString(request);
 		renderData(response, jsonResult);
 		System.out.println("ajax post methed end");
