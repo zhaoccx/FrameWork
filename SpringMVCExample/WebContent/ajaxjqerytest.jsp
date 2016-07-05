@@ -79,7 +79,7 @@ body, input, select, button, h1 {
 					success : function(datas) {
 						//	debugger;
 						if (datas) {
-							$("#createResult").append(datas);
+							$("#createResult").empty().append(datas);
 						}
 					},
 					error : function(datas) {
