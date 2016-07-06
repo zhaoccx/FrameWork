@@ -38,6 +38,18 @@ public class SpringMVCTest {
 
 	private final static String SUCCESS = "success";
 
+	@RequestMapping("testRedirect")
+	public String testRedirect() {
+		System.out.println("testRedirect...........");
+		return "redirect:/ajax.jsp";
+	}
+
+	@RequestMapping("testView")
+	public String testView() {
+		System.out.println("testView...........");
+		return "myView";
+	}
+
 	@RequestMapping("testViewAndViewResolver")
 	public String testViewAndViewResolver() {
 		System.out.println("testViewAndViewResolver...........");

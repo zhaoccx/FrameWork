@@ -8,6 +8,10 @@
 <body>
 
 	<br><br>
+	<a href="springmvc/testRedirect">test testRedirect</a>
+	<br><br>
+	<a href="springmvc/testView">test testView</a>
+	<br><br>
 	<a href="springmvc/testViewAndViewResolver">test testViewAndViewResolver</a>
 	
 	<br><br>

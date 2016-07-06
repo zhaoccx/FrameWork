@@ -14,5 +14,15 @@
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 
-	<mvc:resources mapping="/js/**" location="/jquery/"/>
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="100"></property>
+	</bean>
+
+	<mvc:resources mapping="/js/**" location="/jquery/" />
+
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="i18n"></property>
+	</bean>
+
+	<mvc:view-controller path="/success" view-name="success" />
 </beans>

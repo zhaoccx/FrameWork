@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,33 +11,24 @@
 	request time : ${requestScope.time};
 	<br />
 	<form action="springmvc/testPOJO" method="post">
-		username:<input type="text" name="username"/><br>
-		password:<input type="password" name="password"/><br>
-		email:<input type="text" name="email" value="${requestScope.user.email}"/><br>
-		age:<input type="text" name="age"/><br>
-		provice:<input type="text" name="address.provice"/><br>
-		city:<input type="text" name="address.city"/><br>
-		street:<input type="text" name="address.street" value="${requestScope.user.address.street}"/><br>
-		county:<input type="text" name="address.county"/><br>
-		team:<input type="text" name="address.team"/><br>
-		<input type="submit" value="submit"/>
+		username:<input type="text" name="username" /><br> password:<input type="password" name="password" /><br> email:<input type="text" name="email" value="${requestScope.user.email}" /><br> age:<input type="text" name="age" /><br> provice:<input type="text" name="address.provice" /><br> city:<input type="text" name="address.city" /><br> street:<input type="text"
+			name="address.street" value="${requestScope.user.address.street}" /><br> county:<input type="text" name="address.county" /><br> team:<input type="text" name="address.team" /><br> <input type="submit" value="submit" />
 	</form>
+	<br /> session time : ${sessionScope.time};
+
 	<br />
-	session time : ${sessionScope.time};
-	
-	<br />
-	<br />
-	request time : ${requestScope.user};
-	
+	<br /> request time : ${requestScope.user};
+
 	<br />
 	<br />
-	<br />
-	session time : ${sessionScope.user};
-	
-	
+	<br /> session time : ${sessionScope.user};
+
+
 	<br />
 	<br />
 	<br />
-	
+	<fmt:message key="i18n.username"></fmt:message>
+	<fmt:message key="i18n.password"></fmt:message>
+
 </body>
 </html>
