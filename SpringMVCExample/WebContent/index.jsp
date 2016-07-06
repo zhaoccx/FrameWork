@@ -6,6 +6,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<br><br>
+	<a href="springmvc/testViewAndViewResolver">test testViewAndViewResolver</a>
+	
 	<br><br>
 	<form action="springmvc/testModelAttributes" method="post">
 		<input type="hidden" name="id" value="1"/>

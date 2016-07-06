@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.mvc.entity.Address;
@@ -30,16 +31,22 @@ import com.spring.mvc.entity.User2;
  * @author zhaocc
  *
  */
-// @SessionAttributes(value = { "time", "ssss" }, types = { User.class })
+@SessionAttributes(value = { "time", "ssss" }, types = { User.class })
 @RequestMapping("springmvc")
 @Controller
 public class SpringMVCTest {
 
 	private final static String SUCCESS = "success";
 
+	@RequestMapping("testViewAndViewResolver")
+	public String testViewAndViewResolver() {
+		System.out.println("testViewAndViewResolver...........");
+		return SUCCESS;
+	}
+
 	////////////////////////////////
 	@RequestMapping("testModelAttributes")
-	public String testModelAttributes(User2 user2) {
+	public String testModelAttributes(@ModelAttribute("ssss") User2 user2) {
 		System.out.println(user2);
 		return SUCCESS;
 	}
@@ -49,8 +56,9 @@ public class SpringMVCTest {
 		System.err.println("modelAttribute run ..............");
 		if (id != null) {
 			System.out.println("sssssssssssssssssssssssssssssssssssssssssssssssssssss");
-			map.put("user2", new User2("ss", "1111", "sss", 52, null, id));
+			map.put("ssss", new User2("ss", "1111", "sss", 52, null, id));
 		}
+		System.err.println("modelAttribute run end ..............");
 	}
 
 	//////////////////////////////
