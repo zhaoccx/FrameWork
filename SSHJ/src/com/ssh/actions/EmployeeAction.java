@@ -15,8 +15,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.Preparable;
 
-public class EmployeeAction extends ActionSupport implements RequestAware,
- ModelDriven<Employee>, Preparable{
+public class EmployeeAction extends ActionSupport implements RequestAware, ModelDriven<Employee>, Preparable {
 
 	/**
 	 * 
@@ -28,9 +27,9 @@ public class EmployeeAction extends ActionSupport implements RequestAware,
 	public void setEmployeeService(EmployeeService employeeService) {
 		this.employeeService = employeeService;
 	}
-	
+
 	private DepartmentService departmentService;
-	
+
 	public void setDepartmentService(DepartmentService departmentService) {
 		this.departmentService = departmentService;
 	}
@@ -66,50 +65,50 @@ public class EmployeeAction extends ActionSupport implements RequestAware,
 		}
 		return "ajax-success";
 	}
-	
-	public String input(){
+
+	public String input() {
 		request.put("departments", departmentService.getAll());
 		return INPUT;
 	}
-	
-	public void prepareInput(){
-		if(id != null){
+
+	public void prepareInput() {
+		if (id != null) {
 			model = employeeService.get(id);
 		}
 	}
-	
-	public String save(){
-		if(id == null){
-			model.setCreateTime(new Date());			
+
+	public String save() {
+		if (id == null) {
+			model.setCreateTime(new Date());
 		}
 		employeeService.saveOrUpdate(model);
 		return SUCCESS;
 	}
-	
+
 	/**
 	 * 可以根据 id 来判断为 save 方法准备的 model 是 new 的还是从数据库获取的!
 	 */
-	public void prepareSave(){
-		if(id == null){
+	public void prepareSave() {
+		if (id == null) {
 			model = new Employee();
-		}else{
+		} else {
 			model = employeeService.get(id);
 		}
 	}
-	
+
 	private String lastName;
-	
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
-	public String validateLastName() throws UnsupportedEncodingException{
-		if(employeeService.lastNameIsValid(lastName)){
-			inputStream = new ByteArrayInputStream("1".getBytes("UTF-8")); 
-		}else{
-			inputStream = new ByteArrayInputStream("0".getBytes("UTF-8")); 
+
+	public String validateLastName() throws UnsupportedEncodingException {
+		if (employeeService.lastNameIsValid(lastName)) {
+			inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
+		} else {
+			inputStream = new ByteArrayInputStream("0".getBytes("UTF-8"));
 		}
-		
+
 		return "ajax-success";
 	}
 
@@ -121,10 +120,11 @@ public class EmployeeAction extends ActionSupport implements RequestAware,
 	}
 
 	@Override
-	public void prepare() throws Exception {}
+	public void prepare() throws Exception {
+	}
 
 	private Employee model;
-	
+
 	@Override
 	public Employee getModel() {
 		return model;
