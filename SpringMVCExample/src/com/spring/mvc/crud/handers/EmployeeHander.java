@@ -3,19 +3,32 @@
  */
 package com.spring.mvc.crud.handers;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.mvc.crud.daos.DepartmentDao;
 import com.spring.mvc.crud.daos.EmployeeDao;
@@ -33,6 +46,48 @@ public class EmployeeHander {
 	private EmployeeDao employeeDao;
 	@Autowired
 	private DepartmentDao departmentDao;
+
+	@Autowired
+	private ResourceBundleMessageSource messageSource;
+
+	@RequestMapping("testI18n")
+	public String testI18n(Locale locale) {
+		String message = messageSource.getMessage("i18n.username", null, locale);
+		System.out.println(message);
+		return "i18n";
+	}
+
+	// 模仿下载
+	@RequestMapping("/testResponseEntity")
+	public ResponseEntity<byte[]> testResponseEntity(HttpSession session) throws IOException {
+		byte[] body = null;
+		ServletContext servletContext = session.getServletContext();
+		InputStream in = servletContext.getResourceAsStream("/files/RELEASE-NOTES.txt");
+		body = new byte[in.available()];
+		in.read(body);
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Disposition", "attachment;filename=RELEASE-NOTES.txt");
+
+		HttpStatus statusCode = HttpStatus.OK;
+
+		ResponseEntity<byte[]> response = new ResponseEntity<byte[]>(body, headers, statusCode);
+		return response;
+	}
+
+	@ResponseBody
+	@RequestMapping("testHttpMessageConverter")
+	public String testHttpMessageConverter(@RequestBody String body) {
+		System.out.println(body);
+
+		return "hello " + new Date();
+	}
+
+	@ResponseBody
+	@RequestMapping("/testJson")
+	public Collection<Employee> testJson() {
+		return employeeDao.getAllEmployees();
+	}
 
 	@RequestMapping("testConversionServiceConverer")
 	public String testConverter(@RequestParam("employee") Employee employee) {

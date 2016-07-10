@@ -11,9 +11,11 @@
 	<form action=""></form>
 
 
+	<br />
 	<form:form action="${pageContext.request.contextPath}/mvccrud/emp" method="POST" modelAttribute="employee">
 		<c:if test="${employee.id == null }">
 			lastName:<form:input path="lastName" />
+			<form:errors path="lastName"></form:errors>
 		</c:if>
 		<c:if test="${employee.id != null }">
 			<form:hidden path="id" />
@@ -21,6 +23,7 @@
 		</c:if>
 		<br />
 		email:<form:input path="email" />
+			<form:errors path="email"></form:errors>
 		<br />
 		gender:<form:radiobutton path="gender" value="1" label="Male" />
 		<form:radiobutton path="gender" value="0" label="FaMale" />
@@ -28,6 +31,7 @@
 		department:<form:select path="department.id" items="${departments }" itemValue="id" itemLabel="departmentName"></form:select>
 		<br />
 		birth:<form:input path="birth" />
+			<form:errors path="birth"></form:errors>
 		<br />
 		salary:<form:input path="salary" />
 		<br />
