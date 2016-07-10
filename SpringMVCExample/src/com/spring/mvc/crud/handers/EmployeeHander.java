@@ -5,6 +5,8 @@ package com.spring.mvc.crud.handers;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -71,16 +73,18 @@ public class EmployeeHander {
 	}
 
 	@RequestMapping(value = "/emp", method = RequestMethod.POST)
-	public String saveEmployee(Employee employee, BindingResult result) {
+	public String saveEmployee(@Valid Employee employee, BindingResult result, Map<String, Object> map) {
 		System.out.println(employee);
-		employeeDao.saveEmployee(employee);
 		if (result.getErrorCount() > 0) {
 			System.out.println("出错了");
 			for (FieldError error : result.getFieldErrors()) {
 				System.out.println(error.getField() + ":" + error.getDefaultMessage());
 			}
+			map.put("departments", departmentDao.getAllDepartments());
+			return "input";
 
 		}
+		employeeDao.saveEmployee(employee);
 		return "redirect:/mvccrud/emplist";
 	}
 
