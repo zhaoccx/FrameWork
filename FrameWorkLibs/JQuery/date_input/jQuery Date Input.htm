@@ -1,0 +1,316 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://jonathanleighton.com/projects/date-input -->
+<HTML><HEAD><TITLE>jQuery Date Input</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<STYLE type=text/css media=screen>@import url( /stylesheets/base.css );
+</STYLE>
+
+<SCRIPT type=text/javascript 
+src="jQuery%20Date%20Input_files/code_highlighter.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="jQuery%20Date%20Input_files/css.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="jQuery%20Date%20Input_files/ruby.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="jQuery%20Date%20Input_files/javascript.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="jQuery%20Date%20Input_files/php.js"></SCRIPT>
+<LINK rel=alternate type=application/atom+xml href="/blog.atom"><LINK 
+rel=openid.server href="http://www.myopenid.com/server"><LINK 
+rel=openid.delegate href="http://jonleighton.myopenid.com/"><LINK 
+rel=openid2.local_id href="http://jonleighton.myopenid.com"><LINK 
+rel=openid2.provider href="http://www.myopenid.com/server">
+<META content=http://www.myopenid.com/xrds?username=jonleighton.myopenid.com 
+http-equiv=X-XRDS-Location>
+<SCRIPT type=text/javascript 
+src="jQuery%20Date%20Input_files/jquery.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="jQuery%20Date%20Input_files/jquery.date_input.js"></SCRIPT>
+<LINK rel=stylesheet type=text/css 
+href="jQuery%20Date%20Input_files/date_input.css">
+<SCRIPT type=text/javascript>$($.date_input.initialize);</SCRIPT>
+
+<META name=GENERATOR content="MSHTML 8.00.6001.18854"></HEAD>
+<BODY class=projects>
+<H1>jQuery Date Input</H1>
+<UL id=menu>
+  <LI class=home><A href="http://jonathanleighton.com/">Home</A></LI>
+  <LI class=blog><A href="http://jonathanleighton.com/blog">Blog</A></LI>
+  <LI class=projects><A 
+  href="http://jonathanleighton.com/projects">Projects</A></LI>
+  <LI class=photography><A 
+  href="http://jonathanleighton.com/photography">Photography</A></LI>
+  <LI class=contact><A 
+  href="http://jonathanleighton.com/contact">Contact</A></LI></UL>
+<P>Date Input is a <STRONG><EM>no frills</EM></STRONG> date picker plugin for <A 
+href="http://jquery.com/">jQuery</A>. It is:</P>
+<UL>
+  <LI>Lightweight</LI>
+  <LI>Fast</LI>
+  <LI>Pretty by default</LI></UL>
+<H3>Demo</H3>
+<P>The field below is a date input, click on it and have a play:</P>
+<FORM action=#>
+<P><INPUT class=date_input type=text name=date> </P></FORM>
+<H2>Contents</H2>
+<UL>
+  <LI><A 
+  href="http://jonathanleighton.com/projects/date-input#download">Download</A></LI>
+  <LI><A href="http://jonathanleighton.com/projects/date-input#usage">How to use 
+  it</A></LI>
+  <LI><A 
+  href="http://jonathanleighton.com/projects/date-input#customisation">Customisation</A> 
+
+  <UL>
+    <LI><A 
+    href="http://jonathanleighton.com/projects/date-input#i18n">Internationalisation</A></LI>
+    <LI><A 
+    href="http://jonathanleighton.com/projects/date-input#first-day">First day 
+    of the week</A></LI>
+    <LI><A 
+    href="http://jonathanleighton.com/projects/date-input#date-formatting">Date 
+    formatting</A></LI></UL></LI>
+  <LI><A href="http://jonathanleighton.com/projects/date-input#compat">Browser 
+  compatibility</A></LI>
+  <LI><A 
+  href="http://jonathanleighton.com/projects/date-input#contributing">Contributing</A></LI>
+  <LI><A 
+  href="http://jonathanleighton.com/projects/date-input#feedback">Feedback</A></LI>
+  <LI><A 
+  href="http://jonathanleighton.com/projects/date-input#license">License</A></LI></UL>
+<H2 id=download>Download</H2>
+<P><A href="http://plugins.jquery.com/project/date-input">Download Date Input 
+from the jQuery plugins repository</A>, or <A 
+href="http://github.com/jonleighton/date_input">check out the code on 
+GitHub</A>.</P>
+<H2 id=usage>How to use it</H2>
+<P><STRONG>Note:</STRONG> If you are using a jQuery version less than 1.2.6, you 
+will also need to install the <A 
+href="http://brandonaaron.net/docs/dimensions/">Dimensions plugin</A>.</P>
+<OL>
+  <LI>Include jQuery (I am assuming you already know how to do that)</LI>
+  <LI>
+  <P>Include the Date Input plugin:</P><PRE><CODE class=html>&lt;script type="text/javascript" src="jquery.date_input.js"&gt;&lt;/script&gt;</CODE></PRE></LI>
+  <LI>
+  <P>Include the <ABBR title="Cascading Style Sheets"><SPAN 
+  class=caps>CSS</SPAN></ABBR>:</P><PRE><CODE class=html>&lt;link rel="stylesheet" href="date_input.css" type="text/css"&gt;</CODE></PRE></LI>
+  <LI>
+  <P>Fields are turned into date inputs by getting a jQuery object of the fields 
+  you want, and calling <CODE>date_input()</CODE> on then. I find it convenient 
+  to give all my date inputs a class of <CODE>date_input</CODE> and transform 
+  them automatically on <ABBR title="Document Object Model"><SPAN 
+  class=caps>DOM</SPAN></ABBR> load. There is an <CODE>initialize</CODE> method 
+  which can do this for you, like so:</P><PRE><CODE class=javascript>$($.date_input.initialize);</CODE></PRE>
+  <P>If you want to get a bit more specific, you can do it like this:</P><PRE><CODE class=javascript>$(function() {
+  $("#my_specific_input").date_input();
+});</CODE></PRE></LI></OL>
+<H2 id=customisation>Customisation</H2>
+<P>There is support for simple customisation without completely bloating the 
+plugin. This works by letting you specify options when you call 
+<CODE>$(el).date_input({my: opts})</CODE>. The options essentially replace keys 
+in the <CODE>DateInput.prototype</CODE> object so you can replace any internal 
+method like this if you want. However, there are a few “recommended” 
+customisations you can make and I can’t promise that other customisations won’t 
+break in future versions.</P>
+<P>Instead of specifying options for every new date input, you can specify 
+global defaults by overwriting or modifying <CODE>DateInput.DEFAULT_OPTS</CODE>. 
+These will then be used automatically.</P>
+<H3 id=i18n>Internationalisation</H3>
+<P>The only strings used by Date Input are month names (January, February, 
+etc..), short month names (Jan, Feb, etc…) and short day names (Sun, Mon, etc…). 
+The usual way to specify a new language is to change the default options. For 
+example the Spanish translation is:</P><PRE><CODE class=javascript>jQuery.extend(DateInput.DEFAULT_OPTS, {
+  month_names: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+  short_month_names: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+  short_day_names: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sab"]
+});</CODE></PRE>
+<P>It’s recommended to place this in a separate file called (using the example 
+of a Spanish translation) <CODE>jquery.date_input.es_ES.js</CODE>. The currently 
+available translations are:</P>
+<UL>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.bs_BA.js?raw=true">Bosnian, 
+  Bosnia and Herzegovina</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.bg_BG.js?raw=true">Bulgarian, 
+  Bulgaria</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.zh_CN.js?raw=true">Chinese, 
+  China</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.hr_HR.js?raw=true">Croatian, 
+  Croatia</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.cs_CZ.js?raw=true">Czech, 
+  Czech Republic</A> – <A href="http://www.web-art.cz/">Jiri Melcak</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.da_DK.js?raw=true">Danish, 
+  Denmark</A> – Jan Christensen</LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.nl_NL.js?raw=true">Dutch, 
+  The Netherlands</A> – <A href="http://www.bitstorm.org/">Edwin Martin</A></LI>
+  <LI>English, Great Britain – This is the default so there is no translation 
+  file</LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.et_EE.js?raw=true">Estonian, 
+  Estonia</A> – <A href="http://taimar.pri.ee/">Taimar Teetlok</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.fr_FR.js?raw=true">French, 
+  France</A> – Jérôme <SPAN class=caps>TEISSEIRE</SPAN></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.de_DE.js?raw=true">German, 
+  Germany</A> – <A href="http://sradonia.net/">Stefan Rado</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.el_GR.js?raw=true">Greek, 
+  Greece</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.he_IL.js?raw=true">Hebrew, 
+  Israel</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.hu_HU.js?raw=true">Hungarian, 
+  Hungary</A> – <A href="http://wgi.hu/">Horváth Balázs</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.id_ID.js?raw=true">Indonesian, 
+  Indonesia</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.it_IT.js?raw=true">Italian, 
+  Italy</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.no_NO.js?raw=true">Norwegian, 
+  Norway</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.pl_PL.js?raw=true">Polish, 
+  Poland</A> – Adam Kozubowicz</LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.pt_PT.js?raw=true">Portuguese, 
+  Portugal</A> – <A href="http://mediaweb.pt/">Jean Reis</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.ro_RO.js?raw=true">Romanian, 
+  Romania</A> – Grigore Enescu Madalin</LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.ru_RU.js?raw=true">Russian, 
+  Russia</A> – <A href="http://cyrill.co.uk/">Cyrill Udartcev</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.sk_SK.js?raw=true">Slovak, 
+  Slovakia</A> – <A href="http://www.winners.sk/">Erik Márföldi</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.es_ES.js?raw=true">Spanish, 
+  Spain</A> – <A href="http://www.envero.org/">Sebastian Romano</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.sv_SE.js?raw=true">Swedish, 
+  Sweden</A> – <A href="http://svarven.com/">Christian Jarhult</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.th_TH.js?raw=true">Thai, 
+  Thailand</A> – Tanongsak Yingpadungsab</LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.tr_TR.js?raw=true">Turkish, 
+  Turkey</A></LI>
+  <LI><A 
+  href="http://github.com/jonleighton/date_input/tree/master/translations/jquery.date_input.uk_UA.js?raw=true">Ukrainian, 
+  Ukraine</A></LI></UL>
+<P>If you have made a translation for a language not listed here, please see the 
+<A href="http://jonathanleighton.com/projects/date-input#contributing">section 
+on contributing</A> for instructions on how to get it uploaded.</P>
+<H3 id=first-day>First day of the week</H3>
+<P>The day names are listed from Sunday to Saturday, as this corresponds with 
+Javascript’s representation of days of the week being between 0 for Sunday and 6 
+for Saturday. The default first day of the week is 1 for Monday. You can change 
+this in the options like so:</P><PRE><CODE class=javascript>$(el).date_input({ start_of_week: 0 });</CODE></PRE>
+<P>or:</P><PRE><CODE class=javascript>$.extend(DateInput.DEFAULT_OPTS, { start_of_week: 0 });</CODE></PRE>
+<H3 id=date-formatting>Date formatting</H3>
+<P>Date formatting is done by two methods: <CODE>stringToDate</CODE>, which 
+takes a string and returns a Javascript <CODE>Date</CODE> object, and 
+<CODE>dateToString</CODE> which takes a Javascript <CODE>Date</CODE> object and 
+returns a string. You can replace these two functions in the options to format 
+the date differently. For example, the following formats dates as <SPAN 
+class=caps>YYYY</SPAN>-MM-DD:</P><PRE><CODE class=javascript>$.extend(DateInput.DEFAULT_OPTS, {
+  stringToDate: function(string) {
+    var matches;
+    if (matches = string.match(/^(\d{4,4})-(\d{2,2})-(\d{2,2})$/)) {
+      return new Date(matches[1], matches[2] - 1, matches[3]);
+    } else {
+      return null;
+    };
+  },
+
+  dateToString: function(date) {
+    var month = (date.getMonth() + 1).toString();
+    var dom = date.getDate().toString();
+    if (month.length == 1) month = "0" + month;
+    if (dom.length == 1) dom = "0" + dom;
+    return date.getFullYear() + "-" + month + "-" + dom;
+  }
+});</CODE></PRE>
+<H2 id=compat>Browser Compatibility</H2>
+<P>Date input is known to work with the following browsers:</P>
+<UL>
+  <LI>Firefox 2.0</LI>
+  <LI><SPAN class=caps>IE 7</SPAN></LI>
+  <LI><SPAN class=caps>IE 6</SPAN></LI>
+  <LI>Safari 3 (tested on Windows, probably works on Mac too)</LI>
+  <LI>Opera 9</LI></UL>
+<P>I only have access to Windows and Linux. If you find Date Input to work or 
+not with the various Mac browsers, please let me know. Better still, send me a 
+patch ;)</P>
+<H2 id=contributing>Contributing</H2>
+<UL>
+  <LI><STRONG>If you have a translation</STRONG>, <A 
+  href="http://plugins.jquery.com/node/add/project-issue/date-input">create a 
+  ticket</A> on the <A 
+  href="http://plugins.jquery.com/project/issues/date-input">issue tracker</A> 
+  and upload your translation file. If you’re feeling extra generous you could 
+  create a patch against <A href="http://github.com/jonleighton/date_input">the 
+  git repository</A>. Please make sure your translation is <SPAN 
+  class=caps>UTF</SPAN>-8 encoded.</LI>
+  <LI><STRONG>If you have code</STRONG>, <A 
+  href="http://github.com/jonleighton/date_input;">we are now on GitHub</A> feel 
+  free to fork away and make your patches. Forking is a good idea because it may 
+  take me a little while to get around to your patch, and with a fork other 
+  people will be able to use your change. For very small/uncontroversial things 
+  you can just directly submit a patch. Either way, please <A 
+  href="http://plugins.jquery.com/node/add/project-issue/date-input">create a 
+  ticket</A> detailing your change on the <A 
+  href="http://plugins.jquery.com/project/issues/date-input">issue 
+  tracker</A>,</LI>
+  <LI><STRONG>Styling</STRONG>: I have tried to make the <ACRONYM 
+  title="Cascading Style Sheets">CSS</ACRONYM> work fairly well when plugged 
+  into an already styled page (such as this one). The font styling is inherited 
+  but the rest should be dealt with explicitly. If, whilst using this plugin, 
+  you make any improvements to the default styling, please feel free to send 
+  them to me.</LI></UL>
+<H2 id=feedback>Feedback</H2>
+<P>For bugs, feature requests, patches and translations, <A 
+href="http://jonathanleighton.com/projects/date-input#contributing">see 
+above</A>.</P>
+<P>If you have something specific to ask, see my <A 
+href="http://jonathanleighton.com/contact">contact page</A>. Please note that I 
+am unable to provide individual support – if you think you’ve found a bug then 
+by all means create a ticket, but if your question is “how can I do x?” then I 
+probably can’t help you out. Sorry.</P>
+<H2 id=license>License</H2>
+<P>Date Input was written by <A href="http://jonathanleighton.com/">me</A>, 
+mostly while working at <A href="http://torchbox.com/">Torchbox</A>. It is 
+released under the <SPAN class=caps>MIT</SPAN> license:</P><PRE>Copyright (c) 2007-2008 Jonathan Leighton &amp; Torchbox Ltd
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.</PRE></BODY></HTML>
