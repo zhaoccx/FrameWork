@@ -127,5 +127,15 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-annotations-2.7.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-core-2.8.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-databind-2.7.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-fileupload-1.2.1.jar" sourcepath="WebContent/WEB-INF/lib/commons-fileupload-1.2.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringMVCExample/WebContent/WEB-INF/lib/commons-fileupload-1.2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-io-2.0.jar" sourcepath="WebContent/WEB-INF/lib/commons-io-2.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/SpringMVCExample/WebContent/WEB-INF/lib/commons-io-2.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

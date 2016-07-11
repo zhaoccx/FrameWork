@@ -23,7 +23,19 @@
 </script>
 </head>
 <body>
+
+
 	<a href="mvccrud/emplist">go to list employees</a>
+	<br />
+	<br />
+	<a href="mvccrud/testException?i=2">testException</a>
+	<br />
+	<br />
+	<a href="mvccrud/testResponseResolver?i=2">testResponseResolver</a>
+
+	<form action="mvccrud/testFileUpload" method="post" enctype="multipart/form-data">
+		File : <input type="file" name="file" /> Desc:<input type="text" name="desc" /> <input type="submit" value="Submit" />
+	</form>
 
 	<br />
 	<br />
