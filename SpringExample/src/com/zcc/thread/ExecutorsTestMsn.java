@@ -18,13 +18,16 @@ import java.util.concurrent.Future;
  *
  */
 public class ExecutorsTestMsn {
+	private Integer integer = 0;
+
 	public static void main(String[] args) {
 		long timone = System.currentTimeMillis();
 		ExecutorsTestMsn test = new ExecutorsTestMsn();
 		Map<String, SearchBuilder> map = new HashMap<>();
-		for (int i = 0; i < 100; i++) {
-			map.put("string" + i, new SearchBuilder());
+		for (int i = 0; i < 1000; i++) {
+			map.put("string" + i, new SearchBuilder(new Date(), i));
 		}
+		System.err.println(System.currentTimeMillis() - timone);
 		Map<String, Future<EntityBeanSet>> mapsss = test.testMap(map);
 		Set<Entry<String, Future<EntityBeanSet>>> entrySet = mapsss.entrySet();
 		List<EntityBeanSet> list = new ArrayList<>();
@@ -57,9 +60,7 @@ public class ExecutorsTestMsn {
 
 	public EntityBeanSet getResult(SearchBuilder builder) {
 		if (null != builder) {
-			System.out.println("ssssssssssssssssss");
-			System.err.println(new Date());
-			return new EntityBeanSet();
+			return new EntityBeanSet(integer++);
 		}
 		return null;
 	}
@@ -73,7 +74,6 @@ public class ExecutorsTestMsn {
 
 		@Override
 		public EntityBeanSet call() throws Exception {
-			// TODO Auto-generated method stub
 			return getResult(builder);
 		}
 

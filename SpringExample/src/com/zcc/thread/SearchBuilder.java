@@ -13,7 +13,7 @@ public class SearchBuilder {
 		System.out.println(new Date());
 	}
 
-	public SearchBuilder(Date date) {
-		System.out.println(date);
+	public SearchBuilder(Date date, Integer integer) {
+		System.err.println(integer + "-----------" + date);
 	}
 }
